@@ -1,0 +1,16 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t $DOCKER_USERNAME/docker-lamp .
+  - docker images $DOCKER_USERNAME/docker-lamp
+  
+before_deploy:
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
+deploy:
+  provider: script
+  script: docker push $DOCKER_USERNAME/docker-lamp 
+  on:
+    branch: master
