@@ -4,8 +4,8 @@ FROM php:7.2-apache-stretch
 ARG USER_ID
 ARG GROUP_ID
 
-RUN groupadd --gid ${GROUP_ID:-0} jean \
-  && useradd --uid ${USER_ID:-0} --gid jean --shell /bin/bash --create-home jean
+RUN groupadd --gid ${GROUP_ID} jean \
+  && useradd --uid ${USER_ID} --gid jean --shell /bin/bash --create-home jean
 
 RUN docker-php-ext-install pdo_mysql mysqli
 
