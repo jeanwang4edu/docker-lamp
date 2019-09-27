@@ -1,0 +1,18 @@
+version: '2.0'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER_ID: ${USER_ID}
+        GROUP_ID: ${GROUP_ID}
+    image: lampstack
+    container_name: testlamp
+    volumes:
+      - ./php/:/var/www/html/
+    ports:
+      - 8000:80
+
+    

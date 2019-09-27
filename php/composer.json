@@ -1,0 +1,16 @@
+{
+    "name": "jean/html",
+    "description": "A Project to study composer under docker container",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jean Wang",
+            "email": "jean@nehemiah9design.com"
+        }
+    ],
+    "require": {
+        "league/color-extractor": "0.3.*",
+        "alistairshaw/name-the-color": "0.1.*"
+    }
+}
