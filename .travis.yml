@@ -3,7 +3,7 @@ services:
   - docker
 
 script:
-  - docker build -t $DOCKER_USERNAME/docker-lamp .
+  - docker build -t $DOCKER_USERNAME/docker-lamp --build-arg GROUP_ID=$GROUP_ID -build-arg USER_ID=$USER_ID .
   - docker images $DOCKER_USERNAME/docker-lamp
   
 before_deploy:
